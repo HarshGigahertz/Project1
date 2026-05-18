@@ -8,8 +8,8 @@ COPY package.json pnpm-lock.yaml ./
 
 RUN corepack enable \
   && corepack prepare pnpm@9.0.0 --activate \
-  && pnpm install --no-frozen-lockfile --reporter=verbose
-
+  && pnpm install --frozen-lockfile --prefer-offline
+  
 # Copy the rest of your app's source code
 COPY . .
 
