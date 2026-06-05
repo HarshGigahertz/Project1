@@ -2,9 +2,9 @@
   "buildCommand": "pnpm run build",
   "devCommand": "pnpm run dev",
   "installCommand": "pnpm install",
-  "framework": "remix",
   "outputDirectory": "./build/client",
   "public": "public",
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- .",
   "env": [
     "GROQ_API_KEY",
     "HuggingFace_API_KEY",
@@ -29,5 +29,10 @@
     "VITE_LOG_LEVEL",
     "DEFAULT_NUM_CTX"
   ],
-  "regions": ["iad1"]
+  "regions": ["iad1"],
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  }
 }
